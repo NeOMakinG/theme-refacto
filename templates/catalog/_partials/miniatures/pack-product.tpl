@@ -54,7 +54,7 @@
       {/if}
 
       <p class="product-pack__quantity col text-center my-0">
-        x {$product.pack_quantity}
+        x{$product.pack_quantity}
       </p>
     </a>
   </article>
