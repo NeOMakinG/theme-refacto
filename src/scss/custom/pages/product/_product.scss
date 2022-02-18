@@ -1,6 +1,5 @@
 .page-product {
   .product {
-
     &__name {
       margin-bottom: 2rem;
     }
@@ -106,6 +105,10 @@
       .product-actions__button button {
         width: 100%;
       }
+    }
+
+    &-pack__item {
+      border: 1px $gray-200 solid;
     }
   }
 }

@@ -23,7 +23,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {block name='pack_miniature_item'}
-  <article class="product-pack border rounded mb-2 p-2">
+  <article class="product-pack__item rounded mb-2 p-2">
     <a href="{$product.url}" title="{$product.name}" class="row align-items-center">
       <div class="product-pack__image col-2">
         {if !empty($product.default_image.medium)}
