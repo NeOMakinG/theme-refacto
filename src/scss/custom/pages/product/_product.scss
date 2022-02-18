@@ -1,6 +1,10 @@
 .page-product {
   .product {
 
+    &__name {
+      margin-bottom: 2rem;
+    }
+
     &__infos {
       .accordion-button {
         font-weight: bold;
@@ -39,43 +43,32 @@
       margin-bottom: 1.5rem;
     }
 
-    &__delivery-label {
+    &__tax-label {
       margin-bottom: 1.5rem;
       color: $gray-700;
     }
-    // ABOVE IS DONE
 
-
-
-    // BELOW TODO
-    &-actions {
-      padding-bottom: 2rem;
-      margin-bottom: 0.75rem;
-      border-bottom: 1px solid $gray-200;
-
-      &__button {
-        .btn {
-          width: 100%;
-        }
-      }
+    &__prices {
+      font-size: 1.25rem;
     }
 
-    &-prices {
-      align-items: center;
-
-      .product-flag {
-        margin: 0;
-        margin-left: 1rem;
-      }
-    }
-
-    &-price {
-      margin-bottom: 0;
-    }
-
-    &-quantity {
+    .prices__wrapper {
       display: flex;
-      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    &__current-price {
+      font-weight: bold;
+    }
+
+    &__discount {
+      margin-left: 0.5rem;
+      color: $gray-700;
+    }
+
+    &__price-regular {
+      text-decoration: line-through;
     }
 
     &__variants {
@@ -106,39 +99,13 @@
         }
       }
     }
-  }
 
-  .product-flag {
-    display: inline-block;
-  }
-
-  .page-content {
-    position: relative;
-  }
-
-  .regular-price,
-  .current-price-value {
-    font-size: 1rem;
-  }
-
-  .regular-price {
-    text-decoration-line: line-through;
-    margin-right: 1rem;
-    line-height: 1.2rem;
-  }
-
-  .tax-shipping-delivery-label {
-    margin-top: 0.75rem;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    color: $gray-600;
-  }
-
-  .control-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: $gray-800;
+    &__add-to-cart {
+      margin-bottom: 2rem;
+  
+      .product-actions__button {
+        width: 100%;
+      }
+    }
   }
 }

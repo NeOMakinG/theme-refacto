@@ -25,6 +25,7 @@
 <div class="product__add-to-cart js-product-add-to-cart">
   {if !$configuration.is_catalog}
 
+    <div class="mb-3">
     {block name='product_availability'}
       <span id="product__availability" class="product__availability js-product-availability">
         {if $product.show_availability && $product.availability_message}
@@ -39,12 +40,32 @@
         {/if}
       </span>
     {/block}
-    
-    <label for="quantity_wanted" class="form-label">{l s='Quantity' d='Shop.Theme.Catalog'}</label>
+    {block name='product_delivery_times'}
+      {if $product.is_virtual	== 0}
+        {if $product.additional_delivery_times == 1}
+          {if $product.delivery_information}
+            <span class="product__delivery__information">{$product.delivery_information}</span>
+          {/if}
+        {elseif $product.additional_delivery_times == 2}
+          {if $product.quantity> 0}
+            <span class="product__delivery__information">{$product.delivery_in_stock}</span>
+          {* Out of stock message should not be displayed if customer can't order the product. *}
+          {elseif $product.quantity <= 0 && $product.add_to_cart_url}
+            <span class="product__delivery__information">{$product.delivery_out_stock}</span>
+          {/if}
+        {/if}
+      {/if}
+    {/block}
+    </div>
+
+
+
+
+
 
     {block name='product_quantity'}
-      <div class="product-actions__inputs row m-0">
-        <div class="product-actions__quantity quantity-button js-quantity-button col-2 p-0 me-2">
+      <div class="row g-2">
+        <div class="product-actions__quantity quantity-button js-quantity-button col-auto">
           <input
             type="number"
             name="qty"
@@ -63,7 +84,7 @@
          >
         </div>
 
-        <div class="product-actions__button col p-0">
+        <div class="product-actions__button col">
           <button
             class="btn btn-primary btn-with-icon add-to-cart"
             data-button-action="add-to-cart"

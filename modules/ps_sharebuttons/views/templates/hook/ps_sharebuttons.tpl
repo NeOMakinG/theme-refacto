@@ -25,7 +25,7 @@
 
 {block name='social_sharing'}
   {if $social_share_links}
-    <div class="social-sharing">
+    <div class="social-sharing mb-3">
       <span>{l s='Share' d='Shop.Theme.Actions'}</span>
       <ul>
         {foreach from=$social_share_links item='social_share_link'}

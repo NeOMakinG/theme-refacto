@@ -26,43 +26,40 @@
   <div class="product__prices js-product-prices">
 
     {block name='product_price'}
-      <div class="product__price h5 {if $product.has_discount}product__price--discount{/if}">
+      <div class="prices__wrapper">
 
         <div class="product__current-price">
-          <span class="product_current-price__value" content="{$product.rounded_display_price}">
-            {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='product_sheet'}{/capture}
-            {if '' !== $smarty.capture.custom_price}
-              {$smarty.capture.custom_price nofilter}
-            {else}
-              {$product.price}
-            {/if}
-          </span>
-
-          {if $product.has_discount}
-            {if $product.discount_type === 'percentage'}
-              <span class="product__discount product__discount__percentage product-flag">{l s='Save %percentage%' d='Shop.Theme.Catalog' sprintf=['%percentage%' => $product.discount_percentage_absolute]}</span>
-            {else}
-              <span class="product__discount product__discount__amount product-flag">
-                  {l s='Save %amount%' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.discount_to_display]}
-              </span>
-            {/if}
+          {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='product_sheet'}{/capture}
+          {if '' !== $smarty.capture.custom_price}
+            {$smarty.capture.custom_price nofilter}
+          {else}
+            {$product.price}
           {/if}
         </div>
 
-        {block name='product_unit_price'}
-          {if $displayUnitPrice}
-            <p class="product__unit-price sub">{l s='(%unit_price%)' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</p>
-          {/if}
-        {/block}
+        {if $product.has_discount}
+          <div class="product__discount">
+            {hook h='displayProductPriceBlock' product=$product type="old_price"}
+            <span class="product__price-regular">{$product.regular_price}</span>
+            {if $product.discount_type === 'percentage'}
+              <span class="product__discount-percentage">
+                ({l s='Save %percentage%' d='Shop.Theme.Catalog' sprintf=['%percentage%' => $product.discount_percentage_absolute]})
+              </span>
+            {else}
+              <span class="product__discount-amount">
+                ({l s='Save %amount%' d='Shop.Theme.Catalog' sprintf=['%amount%' => $product.discount_to_display]})
+              </span>
+            {/if}
+          </div>
+        {/if}
+
       </div>
     {/block}
 
-    {block name='product_discount'}
-      {if $product.has_discount}
-        <div class="product__discount">
-          {hook h='displayProductPriceBlock' product=$product type="old_price"}
-          <span class="product__price product__price--regular">{$product.regular_price}</span>
-        </div>
+    {** OTHER PRICES TO STLYE LATER *}
+    {block name='product_unit_price'}
+      {if $displayUnitPrice}
+        <p class="product__unit-price">{l s='(%unit_price%)' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</p>
       {/if}
     {/block}
 
@@ -74,7 +71,7 @@
 
     {block name='product_pack_price'}
       {if $displayPackPrice}
-        <p class="product__pack-price"><span>{l s='Instead of %price%' d='Shop.Theme.Catalog' sprintf=['%price%' => $noPackPrice]}</span></p>
+        <p class="product__pack-price">{l s='Instead of %price%' d='Shop.Theme.Catalog' sprintf=['%price%' => $noPackPrice]}</p>
       {/if}
     {/block}
 
@@ -87,12 +84,11 @@
         </p>
       {/if}
     {/block}
+    {** OTHER PRICES TO STLYE LATER *}
 
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
 
-
-    
-    <div class="product__delivery-label">
+    <div class="product__tax-label">
       {if !$configuration.taxes_enabled}
         {l s='No tax' d='Shop.Theme.Catalog'}
       {elseif $configuration.display_taxes_label}
@@ -100,22 +96,6 @@
       {/if}
       {hook h='displayProductPriceBlock' product=$product type="price"}
       {hook h='displayProductPriceBlock' product=$product type="after_price"}
-      {if $product.is_virtual	== 0}
-        {if $product.additional_delivery_times == 1}
-          {if $product.delivery_information}
-            <span class="product__delivery__information">{$product.delivery_information}</span>
-          {/if}
-        {elseif $product.additional_delivery_times == 2}
-          {if $product.quantity> 0}
-            <span class="product__delivery__information">{$product.delivery_in_stock}</span>
-          {* Out of stock message should not be displayed if customer can't order the product. *}
-          {elseif $product.quantity <= 0 && $product.add_to_cart_url}
-            <span class="product__delivery__information">{$product.delivery_out_stock}</span>
-          {/if}
-        {/if}
-      {/if}
     </div>
-
   </div>
-
 {/if}
