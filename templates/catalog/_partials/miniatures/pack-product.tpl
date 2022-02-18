@@ -48,9 +48,9 @@
       </p>
 
       {if $showPackProductsPrice}
-        <div class="product-pack__price col text-center">
+        <p class="product-pack__price col text-center">
           <strong>{$product.price}</strong>
-        </div>
+        </p>
       {/if}
 
       <p class="product-pack__quantity col text-center my-0">
