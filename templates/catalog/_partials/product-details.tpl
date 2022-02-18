@@ -1,125 +1,146 @@
+
 <div 
-  class="product-infos-details product-infos-element js-product-details accordion-item"
+  class="info js-product-details accordion-item"
   id="product-details"
   data-product="{$product.embedded_attributes|json_encode}"
 >
-  <h5 class="product-infos-title accordion-header" id="product-infos-details-heading">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#product-infos-details-ctr" aria-expanded="false" aria-controls="product-infos-details-ctr">
+  <h5 class="info__title accordion-header" id="product-details-heading">
+    <button class="accordion-button {if $product.description}collapsed{/if}" type="button" data-bs-toggle="collapse" data-bs-target="#product-details-collapse" aria-expanded="{if $product.description}false{else}true{/if}" 
+      aria-controls="product-details-collapse">
       {l s='Product Details' d='Shop.Theme.Catalog'}
     </button>
   </h5>
-  <div id="product-infos-details-ctr" class="accordion-collapse collapse" data-bs-parent="#product-infos-accordion" aria-labelledby="product-infos-details-heading">
-    <ul class="product-infos-details-list">
-      {block name='product_reference'}
-        {if isset($product_manufacturer->id)}
-          <li class="product-infos-details-line">
-            <div class="product-infos-details-line-left">
-              <h5 class="product-infos-details-line-title">{l s='Brand' d='Shop.Theme.Catalog'}</h5>
-            </div>
-            <div class="product-infos-details-line-right">
-              {if isset($manufacturer_image_url)}
-                <a href="{$product_brand_url}">
-                  <img src="{$manufacturer_image_url}" class="img img-thumbnail manufacturer-logo" alt="{$product_manufacturer->name}" loading="lazy" width="98" height="50">
-                </a>
-              {else}
-                <a href="{$product_brand_url}">{$product_manufacturer->name}</a>
-              {/if}
-            </div>
-          </li>
+  <div id="product-details-collapse" class="info__content accordion-collapse collapse {if !$product.description}show{/if}" data-bs-parent="#product-details-heading" aria-labelledby="product-details-heading">
+    <div class="accordion-body">
+      <ul class="product__details">
 
-          {if isset($product.reference_to_display) && $product.reference_to_display neq ''}
-            <li class="product-infos-details-line">
-              <div class="product-infos-details-line-left">
-                <h5 class="product-infos-details-line-title">{l s='Reference' d='Shop.Theme.Catalog'}</h5>
+        {block name='product_reference'}
+          {if isset($product_manufacturer->id)}
+            <li class="detail">
+              <div class="detail__left">
+                <span class="detail__title">{l s='Brand' d='Shop.Theme.Catalog'}</span>
               </div>
-              <div class="product-infos-details-line-right">
-                <span>{$product.reference_to_display}</span>
+              <div class="detail__right">
+                {if isset($manufacturer_image_url)}
+                  <a href="{$product_brand_url}">
+                    <img src="{$manufacturer_image_url}" class="img-fluid detail__manufacturer-logo" alt="{$product_manufacturer->name}" loading="lazy" width="98" height="50">
+                  </a>
+                {else}
+                  <a href="{$product_brand_url}">{$product_manufacturer->name}</a>
+                {/if}
+              </div>
+            </li>
+
+            {if isset($product.reference_to_display) && $product.reference_to_display neq ''}
+              <li class="detail">
+                <div class="detail__left">
+                  <span class="detail__title">{l s='Reference' d='Shop.Theme.Catalog'}</span>
+                </div>
+                <div class="detail__right">
+                  <span>{$product.reference_to_display}</span>
+                </div>
+              </li>
+            {/if}
+          {/if}
+        {/block}
+
+        {block name='product_quantities'}
+          {if $product.show_quantities}
+            <li class="detail">
+              <div class="detail__left">
+                <span class="detail__title">{l s='In stock' d='Shop.Theme.Catalog'}</span>
+              </div>
+              <div class="detail__right">
+                <span data-stock="{$product.quantity}" data-allow-oosp="{$product.allow_oosp}">{$product.quantity} {$product.quantity_label}</span>
               </div>
             </li>
           {/if}
-        {/if}
-      {/block}
+        {/block}
 
-      {block name='product_quantities'}
-        {if $product.show_quantities}
-          <li class="product-infos-details-line">
-            <div class="product-infos-details-line-left">
-              <h5 class="product-infos-details-line-title">{l s='In stock' d='Shop.Theme.Catalog'}</h5>
-            </div>
-            <div class="product-infos-details-line-right">
-              <span data-stock="{$product.quantity}" data-allow-oosp="{$product.allow_oosp}">{$product.quantity} {$product.quantity_label}</span>
-            </div>
-          </li>
-        {/if}
-      {/block}
+        {block name='product_availability_date'}
+          {if $product.availability_date}
+            <li class="detail">
+              <div class="detail__left">
+                <span class="detail__title">{l s='Availability date:' d='Shop.Theme.Catalog'}</span>
+              </div>
+              <div class="detail__right">
+                <span>{$product.availability_date}</span>
+              </div>
+            </li>
+          {/if}
+        {/block}
 
-
-      {block name='product_availability_date'}
-        {if $product.availability_date}
-          <li class="product-infos-details-line">
-            <div class="product-infos-details-line-left">
-              <h5 class="product-infos-details-line-title">{l s='Availability date:' d='Shop.Theme.Catalog'}</h5>
+        {block name='product_out_of_stock'}
+          <li class="detail">
+            <div class="detail__left">
+              <span class="detail__title">{l s='Out of stock' d='Shop.Theme.Catalog'}</span>
             </div>
-            <div class="product-infos-details-line-right">
-              <span>{$product.availability_date}</span>
+            <div class="detail__right">
+              {hook h='actionProductOutOfStock' product=$product}
             </div>
           </li>
-        {/if}
-      {/block}
+        {/block}
 
-      {block name='product_out_of_stock'}
-        <li class="product-infos-details-line">
-          <div class="product-infos-details-line-left">
-            <h5 class="product-infos-details-line-title">{l s='Out of stock' d='Shop.Theme.Catalog'}</h5>
-          </div>
-          <div class="product-infos-details-line-right">
-            {hook h='actionProductOutOfStock' product=$product}
-          </div>
-        </li>
-      {/block}
+        {* if product have specific references, a table will be added to product details section *}
+        {block name='product_condition'}
+          {if $product.condition}
+            <li class="detail">
+              <div class="detail__left">
+                <span class="detail__title">{l s='Condition' d='Shop.Theme.Catalog'}</span>
+              </div>
+              <div class="detail__right">
+                <span>{$product.condition.label}</span>
+              </div>
+            </li>
+          {/if}
+        {/block}
 
-
-      {* if product have specific references, a table will be added to product details section *}
-      {block name='product_condition'}
-        {if $product.condition}
-          <li class="product-infos-details-line">
-            <div class="product-infos-details-line-left">
-              <h5 class="product-infos-details-line-title">{l s='Condition' d='Shop.Theme.Catalog'}</h5>
-            </div>
-            <div class="product-infos-details-line-right">
-              <link href="{$product.condition.schema_url}"/>
-              <span>{$product.condition.label}</span>
-            </div>
-          </li>
-        {/if}
-      {/block}
-    </ul>
-    {block name='product_features'}
-      {if $product.grouped_features}
-        <section class="product-features">
-          <h5 class="product-infos-title">{l s='Data sheet' d='Shop.Theme.Catalog'}</h5>
-          <dl class="data-sheet">
-            {foreach from=$product.grouped_features item=feature}
-              <dt class="name">{$feature.name}</dt>
-              <dd class="value">{$feature.value|escape:'htmlall'|nl2br nofilter}</dd>
+        {block name='product_specific_references'}
+          {if !empty($product.specific_references)}
+            {foreach from=$product.specific_references item=reference key=key}
+              <li class="detail">
+                <div class="detail__left">
+                  <span class="detail__title">{$key}</span>
+                </div>
+                <div class="detail__right">
+                  <span>{$reference}</span>
+                </div>
+              </li>
             {/foreach}
-          </dl>
-        </section>
-      {/if}
-    {/block}
+          {/if}
+        {/block}
+      </ul>
 
-    {block name='product_specific_references'}
-      {if !empty($product.specific_references)}
-        <section class="product-features">
-          <p class="h6">{l s='Specific References' d='Shop.Theme.Catalog'}</p>
-            <dl class="data-sheet">
-              {foreach from=$product.specific_references item=reference key=key}
-                <dt class="name">{$key}</dt>
-                <dd class="value">{$reference}</dd>
-              {/foreach}
-            </dl>
-        </section>
-      {/if}
-    {/block}
+    </div>
   </div>
 </div>
+
+
+{block name='product_features'}
+  {if $product.grouped_features}
+    <div class="info accordion-item" id="product-features">
+      <h5 class="info__title accordion-header" id="product-features-heading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#product-features-collapse" aria-expanded="false" 
+          aria-controls="product-features-collapse">
+          {l s='Data sheet' d='Shop.Theme.Catalog'}
+        </button>
+      </h5>
+      <div id="product-features-collapse" class="info__content accordion-collapse collapse" data-bs-parent="#product-features-heading" aria-labelledby="product-features-heading">
+        <div class="accordion-body">
+          <ul class="product__features">
+            {foreach from=$product.grouped_features item=feature}
+              <li class="detail">
+                <div class="detail__left">
+                  <span class="detail__title">{$feature.name}</span>
+                </div>
+                <div class="detail__right">
+                  <span>{$feature.value|escape:'htmlall'|nl2br nofilter}</span>
+                </div>
+              </li>
+            {/foreach}
+          </ul>
+        </div>
+      </div>
+    </div>
+  {/if}
+{/block}

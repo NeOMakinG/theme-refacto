@@ -1,0 +1,21 @@
+.product__details,
+.product__features {
+  background: $gray-100;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 4px solid white;
+
+  &__left {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 50%;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+}

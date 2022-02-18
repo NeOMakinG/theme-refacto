@@ -89,29 +89,31 @@
     {/block}
 
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
-  </div>
 
-  <div class="product__delivery-label">
-    {if !$configuration.taxes_enabled}
-      {l s='No tax' d='Shop.Theme.Catalog'}
-    {elseif $configuration.display_taxes_label}
-      {$product.labels.tax_long}
-    {/if}
-    {hook h='displayProductPriceBlock' product=$product type="price"}
-    {hook h='displayProductPriceBlock' product=$product type="after_price"}
-    {if $product.is_virtual	== 0}
-      {if $product.additional_delivery_times == 1}
-        {if $product.delivery_information}
-          <span class="product__delivery__information">{$product.delivery_information}</span>
-        {/if}
-      {elseif $product.additional_delivery_times == 2}
-        {if $product.quantity> 0}
-          <span class="product__delivery__information">{$product.delivery_in_stock}</span>
-        {* Out of stock message should not be displayed if customer can't order the product. *}
-        {elseif $product.quantity <= 0 && $product.add_to_cart_url}
-          <span class="product__delivery__information">{$product.delivery_out_stock}</span>
+    <div class="product__delivery-label">
+      {if !$configuration.taxes_enabled}
+        {l s='No tax' d='Shop.Theme.Catalog'}
+      {elseif $configuration.display_taxes_label}
+        {$product.labels.tax_long}
+      {/if}
+      {hook h='displayProductPriceBlock' product=$product type="price"}
+      {hook h='displayProductPriceBlock' product=$product type="after_price"}
+      {if $product.is_virtual	== 0}
+        {if $product.additional_delivery_times == 1}
+          {if $product.delivery_information}
+            <span class="product__delivery__information">{$product.delivery_information}</span>
+          {/if}
+        {elseif $product.additional_delivery_times == 2}
+          {if $product.quantity> 0}
+            <span class="product__delivery__information">{$product.delivery_in_stock}</span>
+          {* Out of stock message should not be displayed if customer can't order the product. *}
+          {elseif $product.quantity <= 0 && $product.add_to_cart_url}
+            <span class="product__delivery__information">{$product.delivery_out_stock}</span>
+          {/if}
         {/if}
       {/if}
-    {/if}
+    </div>
+
   </div>
+
 {/if}

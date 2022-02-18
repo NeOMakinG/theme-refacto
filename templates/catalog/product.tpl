@@ -50,14 +50,15 @@
 {block name='content'}
 
   {* FIRST PART - PHOTO, NAME, PRICES, ADD TO CART*}
-  <div class="row product product-container js-product-container">
-    <div class="product__left product__col--left col-lg-6 col-xl-7">
+  <div class="row product js-product-container">
+
+    <div class="product__left col-lg-6 col-xl-7">
       {block name='product_cover_thumbnails'}
         {include file='catalog/_partials/product-cover-thumbnails.tpl'}
       {/block}
     </div>
     
-    <div class="product__col product__col--right col-lg-6 col-xl-5">
+    <div class="product__col col-lg-6 col-xl-5">
       {block name='product_header'}
         <h1 class="h4">{block name='page_title'}{$product.name}{/block}</h1>
       {/block}
@@ -72,7 +73,7 @@
 
       {block name='product_customization'}
         {if $product.is_customizable && count($product.customizations.fields)}
-            {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
+          {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
         {/if}
       {/block}
 
@@ -116,6 +117,7 @@
 
   {* SECOND PART - REASSURANCE, TABS *}
   <div class="row">
+
     <div class="col-lg-6 col-xl-5 order-lg-1">
       {block name='hook_display_reassurance'}
         {hook h='displayReassurance'}
@@ -124,21 +126,24 @@
 
     <div class="col-lg-6 col-xl-7">
       {block name='product_tabs'}
-        <div class="product__infos">
-          <div class="product__infos__accordion accordion accordion-flush" id="product-infos-accordion">
+          <div class="product__infos accordion accordion-flush" id="product-infos-accordion">
 
-            <div class="product__infos__element product-infos-description accordion-item" id="description">
-              {block name='product_description'}
-                <h5 class="product__infos__title accordion-header" id="product-description-heading">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#product-description-ctr" aria-expanded="true" aria-controls="product-description-ctr">
-                    {l s='Description' d='Shop.Theme.Catalog'}
-                  </button>
-                </h5>
-                <div id="product__description" class="accordion-collapse collapse show" data-bs-parent="#product-infos-accordion"  ria-labelledby="product-description-heading">
-                  <div class="product-description accordion-body rich-text">{$product.description nofilter}</div>
+            {block name='product_description'}
+              {if $product.description}
+                <div class="info accordion-item" id="description">
+                  <h5 class="info__title accordion-header" id="product-description-heading">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#product-description-collapse" aria-expanded="true" aria-controls="product-description-collapse">
+                      {l s='Description' d='Shop.Theme.Catalog'}
+                    </button>
+                  </h5>
+                  <div id="product-description-collapse" class="info__content accordion-collapse collapse show" data-bs-parent="#product-infos-accordion"  ria-labelledby="product-description-heading">
+                    <div class="product__description accordion-body rich-text">
+                      {$product.description nofilter}
+                    </div>
+                  </div>
                 </div>
-              {/block}
-            </div>
+              {/if}
+            {/block}
 
             {block name='product_details'}
               {include file='catalog/_partials/product-details.tpl'}
@@ -146,14 +151,14 @@
 
             {block name='product_attachments'}
               {if $product.attachments}
-                <div class="product__infos__element product__infos__attachments accordion-item" id="attachments">
-                  <section class="product__attachments">
-                    <h5 class="product__infos__title accordion-header" id="product-attachments-heading">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#product-attachments-ctr" aria-expanded="true" aria-controls="product-attachments-ctr">
-                        {l s='Download' d='Shop.Theme.Actions'}
-                      </button>
-                    </h5>
-                    <div id="product__attachments__ctr" class="accordion-collapse collapse" data-bs-parent="#product-infos-accordion" aria-labelledby="product-attachments-heading">
+                <div class="info accordion-item" id="attachments">
+                  <h5 class="info__title accordion-header" id="product-attachments-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#product-attachments-collapse" aria-expanded="true" aria-controls="product-attachments-collapse">
+                      {l s='Download' d='Shop.Theme.Actions'}
+                    </button>
+                  </h5>
+                  <div id="product-attachments-collapse" class="info__content accordion-collapse collapse" data-bs-parent="#product-infos-accordion" aria-labelledby="product-attachments-heading">
+                    <div class="product__attachments accordion-body">
                       {foreach from=$product.attachments item=attachment}
                         <div class="attachment">
                           <h4><a href="{url entity='attachment' params=['id_attachment' => $attachment.id_attachment]}">{$attachment.name}</a></h4>
@@ -164,20 +169,28 @@
                         </div>
                       {/foreach}
                     </div>
-                  </section>
+                  </div>
                 </div>
               {/if}
             {/block}
 
+            {* New collapses for module hooked content *}
             {foreach from=$product.extraContent item=extra key=extraKey}
-              <div class="product__infos__element product__infos--extra {$extra.attr.class}" id="extra-{$extraKey}" {foreach $extra.attr as $key => $val} {$key}="{$val}"{/foreach}>
-                <h5 class="product__infos__title">{l s='Extras' d='Shop.Theme.Catalog'}</h5>
-                {$extra.content nofilter}
+              <div class="info accordion-item" id="extra-{$extraKey}" {foreach $extra.attr as $key => $val} {$key}="{$val}"{/foreach}>
+                <h5 class="info__title accordion-header" id="product-extra{$extraKey}-heading">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#product-extra{$extraKey}-collapse" aria-expanded="true" aria-controls="product-extra{$extraKey}-collapse">
+                    {$extra.title}
+                  </button>
+                </h5>
+                <div id="product-extra{$extraKey}-collapse" class="info__content accordion-collapse collapse" data-bs-parent="#product-infos-accordion" aria-labelledby="product-extra{$extraKey}-heading">
+                  <div class="accordion-body">
+                    {$extra.content nofilter}
+                  </div>
+                </div>
               </div>
             {/foreach}
 
           </div>
-        </div>
       {/block}
     </div>{* /col *}
   </div>{* /row *} 
@@ -198,10 +211,7 @@
   {/block}
 
   {block name='page_footer_container'}
-    <footer class="page-footer">
-      {block name='page_footer'}
-        <!-- Footer content -->
-      {/block}
-    </footer>
+    {block name='page_footer'}
+    {/block}
   {/block}
 {/block}

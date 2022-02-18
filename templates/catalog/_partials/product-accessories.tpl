@@ -22,13 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
- <section class="product-accessories">
-  <p class="h5 text-uppercase">{l s='You might also like' d='Shop.Theme.Catalog'}</p>
-  <div class="products">
-    {foreach from=$accessories item="product_accessory" key="position"}
-      {block name='product_miniature'}
-        {include file='catalog/_partials/miniatures/product.tpl' product=$product_accessory position=$position}
-      {/block}
-    {/foreach}
-  </div>
+ <section class="product-accessories mt-3">
+  {include file="components/section-title.tpl" title={l s='You might also like' d='Shop.Theme.Catalog'}}
+  {include file="catalog/_partials/productlist.tpl" products=$accessories cssClass="row" productClass="col-6 col-lg-4 col-xl-3"}
 </section>

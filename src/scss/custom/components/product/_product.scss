@@ -1,5 +1,24 @@
+@import "details";
+
 .page-product {
   .product {
+
+    &__infos {
+      .accordion-button {
+        font-weight: bold;
+        font-size: 1.25rem;
+        padding: 1.25rem 0;
+      }
+
+      .accordion-body {
+        padding: 0;
+      }
+    }
+    // ABOVE IS DONE
+
+
+
+    // BELOW TODO
     &-actions {
       padding-bottom: 2rem;
       margin-bottom: 0.75rem;
@@ -23,51 +42,6 @@
 
     &-price {
       margin-bottom: 0;
-    }
-
-    &-infos {
-      &-title {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        font-size: 1rem;
-      }
-
-      &-details {
-        &-list {
-          background: $gray-100;
-        }
-
-        &-line {
-          display: flex;
-          align-items: center;
-          padding: 0.6rem 1.25rem;
-
-          > div {
-            width: 50%;
-
-            span,
-            p,
-            h5,
-            a {
-              font-size: 1rem;
-            }
-          }
-        }
-      }
-
-      .data-sheet {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        background: $gray-100;
-
-        dt,
-        dd {
-          width: 50%;
-          padding: 0.6rem 1.25rem;
-          font-size: 1rem;
-        }
-      }
     }
 
     &-quantity {
