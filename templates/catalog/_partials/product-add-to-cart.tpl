@@ -24,6 +24,22 @@
  *}
 <div class="product__add-to-cart js-product-add-to-cart">
   {if !$configuration.is_catalog}
+
+    {block name='product_availability'}
+      <span id="product__availability" class="product__availability js-product-availability">
+        {if $product.show_availability && $product.availability_message}
+          {if $product.availability == 'available'}
+            <i class="material-icons rtl-no-flip product-available">&#xE5CA;</i>
+          {elseif $product.availability == 'last_remaining_items'}
+            <i class="material-icons product-last-items">&#xE002;</i>
+          {else}
+            <i class="material-icons product-unavailable">&#xE14B;</i>
+          {/if}
+          {$product.availability_message}
+        {/if}
+      </span>
+    {/block}
+    
     <label for="quantity_wanted" class="form-label">{l s='Quantity' d='Shop.Theme.Catalog'}</label>
 
     {block name='product_quantity'}
@@ -63,21 +79,6 @@
 
         {hook h='displayProductActions' product=$product}
       </div>
-    {/block}
-
-    {block name='product_availability'}
-      <span id="product__availability" class="product__availability js-product-availability">
-        {if $product.show_availability && $product.availability_message}
-          {if $product.availability == 'available'}
-            <i class="material-icons rtl-no-flip product-available">&#xE5CA;</i>
-          {elseif $product.availability == 'last_remaining_items'}
-            <i class="material-icons product-last-items">&#xE002;</i>
-          {else}
-            <i class="material-icons product-unavailable">&#xE14B;</i>
-          {/if}
-          {$product.availability_message}
-        {/if}
-      </span>
     {/block}
 
     {block name='product_minimal_quantity'}

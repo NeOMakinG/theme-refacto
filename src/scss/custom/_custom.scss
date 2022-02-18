@@ -4,8 +4,6 @@
 @import "components/language-selector";
 @import "components/section-title";
 @import "components/breadcrumb";
-@import "components/product/product-miniature";
-@import "components/product/product";
 @import "components/category-tree/category-tree";
 @import "components/search-filters/search-filters";
 @import "components/category/header";
@@ -20,6 +18,7 @@
 @import "components/store";
 @import "components/sitemap";
 @import "components/address";
+@import "components/product/product-miniature";
 
 // Modules
 @import "modules/featuredproducts";
@@ -43,3 +42,5 @@
 @import "pages/checkout";
 @import "pages/addresses";
 @import "pages/orders";
+@import "pages/product/product";
+@import "pages/product/details";

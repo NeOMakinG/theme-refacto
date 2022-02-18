@@ -50,7 +50,7 @@
 {block name='content'}
 
   {* FIRST PART - PHOTO, NAME, PRICES, ADD TO CART*}
-  <div class="row product js-product-container">
+  <div class="row g-5 product js-product-container">
 
     <div class="product__left col-lg-6 col-xl-7">
       {block name='product_cover_thumbnails'}

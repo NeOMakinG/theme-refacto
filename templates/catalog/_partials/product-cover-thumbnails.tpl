@@ -23,14 +23,11 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 
-<div class="images-container js-images-container">
+<div class="product__images js-images-container">
 
-  <div 
-    id="product-images" 
-    class="carousel carousel-dark slide js-product-carousel row" 
-    data-bs-ride="carousel"
-    data-bs-interval="false"
-  >
+  <div id="product-images" class="carousel slide js-product-carousel" 
+    data-bs-ride="carousel" data-bs-interval="false">
+
     <div class="carousel-inner">
       {include file='catalog/_partials/product-flags.tpl'}
 
@@ -48,9 +45,7 @@
       {block name='product_cover'}
         {if $product.default_image}
           {foreach from=$product.images item=image key=key}
-            <li 
-              class="carousel-item{if $image.id_image == $product.default_image.id_image} active{/if}" 
-          >
+            <div class="carousel-item{if $image.id_image == $product.default_image.id_image} active{/if}">
               <img
                 class="img-fluid"
                 src="{$image.bySize.large_default.url}"
@@ -60,17 +55,13 @@
                 {else}
                   alt="{$product.name}"
                 {/if}
-                loading="lazy"
-            >
-            </li>
+                loading="lazy">
+            </div>
           {/foreach}
         {else}
-          <li class="carousel-item">
-            <img 
-              src="{$urls.no_picture_image.bySize.large_default.url}"
-              loading="lazy"
-          >
-          </li>
+          <div class="carousel-item">
+            <img src="{$urls.no_picture_image.bySize.large_default.url}" loading="lazy">
+          </div>
         {/if}
       {/block}
     </div>

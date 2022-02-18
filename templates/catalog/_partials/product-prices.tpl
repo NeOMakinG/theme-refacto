@@ -23,19 +23,10 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {if $product.show_price}
-  <div class="product__prices js-product-prices d-flex flex-wrap">
-    {block name='product_discount'}
-      {if $product.has_discount}
-        <div class="product__discount">
-          {hook h='displayProductPriceBlock' product=$product type="old_price"}
-          <span class="product__price product__price--regular">{$product.regular_price}</span>
-        </div>
-      {/if}
-    {/block}
+  <div class="product__prices js-product-prices">
 
     {block name='product_price'}
-      <div
-        class="product__price h5 {if $product.has_discount}product__price--discount{/if}">
+      <div class="product__price h5 {if $product.has_discount}product__price--discount{/if}">
 
         <div class="product__current-price">
           <span class="product_current-price__value" content="{$product.rounded_display_price}">
@@ -66,9 +57,18 @@
       </div>
     {/block}
 
+    {block name='product_discount'}
+      {if $product.has_discount}
+        <div class="product__discount">
+          {hook h='displayProductPriceBlock' product=$product type="old_price"}
+          <span class="product__price product__price--regular">{$product.regular_price}</span>
+        </div>
+      {/if}
+    {/block}
+
     {block name='product_without_taxes'}
       {if $priceDisplay == 2}
-        <p class="product__price--taxless">{l s='%price% tax excl.' d='Shop.Theme.Catalog' sprintf=['%price%' => $product.price_tax_exc]}</p>
+        <p class="product__price-taxless">{l s='%price% tax excl.' d='Shop.Theme.Catalog' sprintf=['%price%' => $product.price_tax_exc]}</p>
       {/if}
     {/block}
 
@@ -90,6 +90,8 @@
 
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
 
+
+    
     <div class="product__delivery-label">
       {if !$configuration.taxes_enabled}
         {l s='No tax' d='Shop.Theme.Catalog'}
