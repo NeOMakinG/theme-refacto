@@ -24,22 +24,19 @@
  *}
 <section class="product-customization js-product-customization">
   {if !$configuration.is_catalog}
-    <div class="card card-block">
+    <div class="card card-body bg-light">
       <p class="h4 card-title">{l s='Product customization' d='Shop.Theme.Catalog'}</p>
-      <p>{l s='Don\'t forget to save your customization to be able to add to cart' d='Shop.Forms.Help'}</p>
 
       {block name='product_customization_form'}
         <form method="post" action="{$product.url}" enctype="multipart/form-data">
           {foreach from=$customizations.fields item="field"}
-            <div class="product-customization-item mb-3">
-              <label  class="form-label">{$field.label}</label>
-
+            <div class="product-customization__item mb-3">
               {if $field.type == 'text'}
                 <textarea placeholder="{l s='Your message here' d='Shop.Forms.Help'}" class="form-control product-message" maxlength="250" {if $field.required} required {/if} name="{$field.input_name}"></textarea>
                 <div class="form-text">{l s='250 char. max' d='Shop.Forms.Help'}</div>
                 {if $field.text !== ''}
-                  <div class="card card-body mt-2 bg-light">
-                    <h6 class="customization-message">{l s='Your customization:' d='Shop.Theme.Catalog'}</h6>
+                  <div class="card card-body mt-2">
+                    <h6 class="product-customization__message">{l s='Your customization:' d='Shop.Theme.Catalog'}</h6>
                     <p>{$field.text}</p>
                   </div>
                 {/if}
@@ -52,7 +49,6 @@
                 <input class="form-control file-input js-file-input" {if $field.required} required {/if} type="file" name="{$field.input_name}">
                 <div class="form-text">{l s='.png .jpg .gif' d='Shop.Forms.Help'}</div>
               {/if}
-
             </div>
           {/foreach}
           <div>
@@ -60,7 +56,6 @@
           </div>
         </form>
       {/block}
-
     </div>
   {/if}
 </section>
