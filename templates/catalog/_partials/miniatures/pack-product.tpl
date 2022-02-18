@@ -23,47 +23,39 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {block name='pack_miniature_item'}
-  <article>
-    <div class="card">
-      <div class="pack-product-container">
-        <div class="thumb-mask">
-          <div class="mask">
-            <a href="{$product.url}" title="{$product.name}">
-              {if !empty($product.default_image.medium)}
-                <img
-                        src="{$product.default_image.medium.url}"
-                        {if !empty($product.default_image.legend)}
-                          alt="{$product.default_image.legend}"
-                          title="{$product.default_image.legend}"
-                        {else}
-                          alt="{$product.name}"
-                        {/if}
-                        loading="lazy"
-                        data-full-size-image-url="{$product.default_image.large.url}"
-               >
-              {else}
-                <img src="{$urls.no_picture_image.bySize.medium_default.url}" loading="lazy" />
-              {/if}
-            </a>
-          </div>
-        </div>
-
-        <div class="pack-product-name">
-          <a href="{$product.url}" title="{$product.name}">
-            {$product.name}
-          </a>
-        </div>
-
-        {if $showPackProductsPrice}
-          <div class="pack-product-price">
-            <strong>{$product.price}</strong>
-          </div>
+  <article class="product-pack border rounded mb-2 p-2">
+    <a href="{$product.url}" title="{$product.name}" class="row align-items-center">
+      <div class="product-pack__image col-2">
+        {if !empty($product.default_image.medium)}
+          <img
+            src="{$product.default_image.medium.url}"
+            {if !empty($product.default_image.legend)}
+              alt="{$product.default_image.legend}"
+              title="{$product.default_image.legend}"
+            {else}
+              alt="{$product.name}"
+            {/if}
+            loading="lazy"
+            class="img-fluid rounded"
+          >
+        {else}
+          <img src="{$urls.no_picture_image.bySize.medium_default.url}" loading="lazy" class="img-fluid rounded" />
         {/if}
-
-        <div class="pack-product-quantity">
-          <span>x {$product.pack_quantity}</span>
-        </div>
       </div>
-    </div>
+
+      <p class="product-pack__name col-6 my-0">
+        {$product.name}
+      </p>
+
+      {if $showPackProductsPrice}
+        <div class="product-pack__price col text-center">
+          <strong>{$product.price}</strong>
+        </div>
+      {/if}
+
+      <p class="product-pack__quantity col text-center my-0">
+        x {$product.pack_quantity}
+      </p>
+    </a>
   </article>
 {/block}

@@ -25,14 +25,14 @@
 {if $cart.vouchers.allowed}
   {block name='cart_voucher'}
     <div class="block-promo">
-      <div class="cart-voucher js-cart-voucher">
+      <div class="voucher js-cart-voucher">
         {if $cart.vouchers.added}
           {block name='cart_voucher_list'}
-            <ul class="promo-name card-block">
+            <ul class="voucher__list card-block">
               {foreach from=$cart.vouchers.added item=voucher}
-                <li class="cart-summary-line">
-                  <span class="label">{$voucher.name}</span>
-                  <div>
+                <li class="cart-summary__line">
+                  <span class="cart-summary__label">{$voucher.name}</span>
+                  <div class="cart-summary__value">
                     <span>{$voucher.reduction_formatted}</span>
                       {if isset($voucher.code) && $voucher.code !== ''}
                         <a href="{$voucher.delete_url}" data-link-action="remove-voucher"><i class="material-icons">&#xE872;</i></a>
@@ -44,9 +44,9 @@
           {/block}
         {/if}
 
-        <p class="promo-code-button display-promo{if $cart.discounts|count> 0} with-discounts{/if}">
-          <a class="collapse-button" href="#promo-code">
-            {l s='Have a promo code?' d='Shop.Theme.Checkout'}
+        <p class="voucher__button display-promo{if $cart.discounts|count> 0} with-discounts{/if}">
+          <a class="collapse-button" href="#promo-code" data-bs-toggle="collapse">
+            {l s='Promo code' d='Shop.Theme.Checkout'}
           </a>
         </p>
 
