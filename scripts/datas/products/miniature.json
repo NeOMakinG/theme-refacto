@@ -1,0 +1,511 @@
+  {
+    "add_to_cart_url": "http:\/\/localhost\/prestashop\/en\/cart?add=1&id_product=7&id_product_attribute=0&token=43fc8eff7eb0dd9521c64a607de62f74",
+    "id": "7",
+    "attributes": [],
+    "show_price": true,
+    "weight_unit": "kg",
+    "url": "http:\/\/localhost\/prestashop\/en\/home-accessories\/7-mug-the-adventure-begins.html",
+    "canonical_url": "http:\/\/localhost\/prestashop\/en\/home-accessories\/7-mug-the-adventure-begins.html",
+    "condition": false,
+    "delivery_information": null,
+    "embedded_attributes": {
+      "id_product": "7",
+      "id_supplier": "2",
+      "id_manufacturer": "1",
+      "id_category_default": "8",
+      "id_shop_default": "1",
+      "on_sale": "0",
+      "online_only": "0",
+      "ecotax": "0.000000",
+      "quantity": -37,
+      "minimal_quantity": "1",
+      "low_stock_threshold": null,
+      "low_stock_alert": "0",
+      "price": "\u20ac14.28",
+      "unity": "",
+      "unit_price": "\u20ac0.00",
+      "unit_price_ratio": 0,
+      "additional_shipping_cost": "0.000000",
+      "reference": "demo_12",
+      "out_of_stock": "1",
+      "customizable": "0",
+      "uploadable_files": "0",
+      "text_fields": "0",
+      "redirect_type": "301-category",
+      "id_type_redirected": "0",
+      "available_for_order": "1",
+      "available_date": "0000-00-00",
+      "show_condition": "0",
+      "condition": "new",
+      "show_price": "1",
+      "indexed": "1",
+      "visibility": "both",
+      "is_virtual": "0",
+      "cache_default_attribute": "0",
+      "date_add": "2022-02-28 09:18:12",
+      "date_upd": "2022-03-09 15:37:27",
+      "advanced_stock_management": "0",
+      "pack_stock_type": "3",
+      "description": "<p>The adventure begins with a cup of coffee. Set out to conquer the day! 8,2cm diameter \/ 9,5cm height \/ 0.43kg. Dishwasher-proof.<\/p>",
+      "description_short": "<p>White Ceramic Mug. 325ml<\/p>",
+      "link_rewrite": "mug-the-adventure-begins",
+      "meta_description": "",
+      "meta_keywords": "",
+      "meta_title": "",
+      "name": "Mug The adventure begins",
+      "available_now": "",
+      "available_later": "",
+      "delivery_in_stock": "",
+      "delivery_out_stock": "",
+      "new": "1",
+      "id_product_attribute": 0,
+      "allow_oosp": 1,
+      "id_customization": null,
+      "category": "home-accessories",
+      "id_image": "7-7",
+      "category_name": "Home Accessories",
+      "link": "http:\/\/localhost\/prestashop\/en\/home-accessories\/7-mug-the-adventure-begins.html",
+      "attribute_price": 0,
+      "price_tax_exc": 11.9,
+      "price_without_reduction": 14.28,
+      "reduction": 0,
+      "specific_prices": [],
+      "quantity_all_versions": -37,
+      "features": [
+        {
+          "name": "Composition",
+          "value": "Ceramic",
+          "id_feature": "1",
+          "position": "0"
+        }
+      ],
+      "attachments": [],
+      "virtual": 0,
+      "pack": false,
+      "packItems": [],
+      "nopackprice": 0,
+      "customization_required": false,
+      "rate": 20,
+      "tax_name": "TVA FR 20%",
+      "ecotax_rate": 0,
+      "images": [
+        {
+          "bySize": {
+            "small_default": {
+              "url": "http:\/\/localhost\/prestashop\/7-small_default\/mug-the-adventure-begins.jpg",
+              "width": 98,
+              "height": 98
+            },
+            "cart_default": {
+              "url": "http:\/\/localhost\/prestashop\/7-cart_default\/mug-the-adventure-begins.jpg",
+              "width": 125,
+              "height": 125
+            },
+            "home_default": {
+              "url": "http:\/\/localhost\/prestashop\/7-home_default\/mug-the-adventure-begins.jpg",
+              "width": 250,
+              "height": 250
+            },
+            "medium_default": {
+              "url": "http:\/\/localhost\/prestashop\/7-medium_default\/mug-the-adventure-begins.jpg",
+              "width": 452,
+              "height": 452
+            },
+            "large_default": {
+              "url": "http:\/\/localhost\/prestashop\/7-large_default\/mug-the-adventure-begins.jpg",
+              "width": 800,
+              "height": 800
+            }
+          },
+          "small": {
+            "url": "http:\/\/localhost\/prestashop\/7-small_default\/mug-the-adventure-begins.jpg",
+            "width": 98,
+            "height": 98
+          },
+          "medium": {
+            "url": "http:\/\/localhost\/prestashop\/7-home_default\/mug-the-adventure-begins.jpg",
+            "width": 250,
+            "height": 250
+          },
+          "large": {
+            "url": "http:\/\/localhost\/prestashop\/7-large_default\/mug-the-adventure-begins.jpg",
+            "width": 800,
+            "height": 800
+          },
+          "legend": "Mug The adventure begins",
+          "id_image": "7",
+          "cover": "1",
+          "position": "1",
+          "associatedVariants": []
+        }
+      ],
+      "cover": {
+        "bySize": {
+          "small_default": {
+            "url": "http:\/\/localhost\/prestashop\/7-small_default\/mug-the-adventure-begins.jpg",
+            "width": 98,
+            "height": 98
+          },
+          "cart_default": {
+            "url": "http:\/\/localhost\/prestashop\/7-cart_default\/mug-the-adventure-begins.jpg",
+            "width": 125,
+            "height": 125
+          },
+          "home_default": {
+            "url": "http:\/\/localhost\/prestashop\/7-home_default\/mug-the-adventure-begins.jpg",
+            "width": 250,
+            "height": 250
+          },
+          "medium_default": {
+            "url": "http:\/\/localhost\/prestashop\/7-medium_default\/mug-the-adventure-begins.jpg",
+            "width": 452,
+            "height": 452
+          },
+          "large_default": {
+            "url": "http:\/\/localhost\/prestashop\/7-large_default\/mug-the-adventure-begins.jpg",
+            "width": 800,
+            "height": 800
+          }
+        },
+        "small": {
+          "url": "http:\/\/localhost\/prestashop\/7-small_default\/mug-the-adventure-begins.jpg",
+          "width": 98,
+          "height": 98
+        },
+        "medium": {
+          "url": "http:\/\/localhost\/prestashop\/7-home_default\/mug-the-adventure-begins.jpg",
+          "width": 250,
+          "height": 250
+        },
+        "large": {
+          "url": "http:\/\/localhost\/prestashop\/7-large_default\/mug-the-adventure-begins.jpg",
+          "width": 800,
+          "height": 800
+        },
+        "legend": "Mug The adventure begins",
+        "id_image": "7",
+        "cover": "1",
+        "position": "1",
+        "associatedVariants": []
+      },
+      "has_discount": false,
+      "discount_type": null,
+      "discount_percentage": null,
+      "discount_percentage_absolute": null,
+      "discount_amount": null,
+      "discount_amount_to_display": null,
+      "price_amount": 14.28,
+      "unit_price_full": "\u20ac0.00 ",
+      "show_availability": true,
+      "availability_message": "",
+      "availability_date": null,
+      "availability": "available"
+    },
+    "file_size_formatted": null,
+    "attachments": [],
+    "quantity_discounts": [],
+    "reference_to_display": "demo_12",
+    "grouped_features": {
+      "Composition": {
+        "name": "Composition",
+        "value": "Ceramic",
+        "id_feature": "1",
+        "position": "0"
+      }
+    },
+    "seo_availability": "https:\/\/schema.org\/PreOrder",
+    "labels": {
+      "tax_short": "(tax incl.)",
+      "tax_long": "Tax included"
+    },
+    "ecotax": {
+      "value": "\u20ac0.00",
+      "amount": "0.000000",
+      "rate": 0
+    },
+    "flags": {
+      "new": {
+        "type": "new",
+        "label": "New"
+      }
+    },
+    "main_variants": [],
+    "specific_references": null,
+    "id_product": "7",
+    "id_supplier": "2",
+    "id_manufacturer": "1",
+    "id_category_default": "8",
+    "id_shop_default": "1",
+    "id_tax_rules_group": "1",
+    "on_sale": "0",
+    "online_only": "0",
+    "ean13": "",
+    "isbn": "",
+    "upc": "",
+    "mpn": "",
+    "quantity": -37,
+    "minimal_quantity": "1",
+    "low_stock_threshold": null,
+    "low_stock_alert": "0",
+    "price": "\u20ac14.28",
+    "wholesale_price": "0.000000",
+    "unity": "",
+    "unit_price": "\u20ac0.00",
+    "unit_price_ratio": 0,
+    "additional_shipping_cost": "0.000000",
+    "reference": "demo_12",
+    "supplier_reference": "demo_12",
+    "location": "",
+    "width": "0.000000",
+    "height": "0.000000",
+    "depth": "0.000000",
+    "weight": "0.300000",
+    "out_of_stock": "1",
+    "additional_delivery_times": "1",
+    "quantity_discount": "0",
+    "customizable": "0",
+    "uploadable_files": "0",
+    "text_fields": "0",
+    "active": "1",
+    "redirect_type": "301-category",
+    "id_type_redirected": "0",
+    "available_for_order": "1",
+    "available_date": "0000-00-00",
+    "show_condition": "0",
+    "indexed": "1",
+    "visibility": "both",
+    "cache_is_pack": "0",
+    "cache_has_attachments": "0",
+    "is_virtual": "0",
+    "cache_default_attribute": "0",
+    "date_add": "2022-02-28 09:18:12",
+    "date_upd": "2022-03-09 15:37:27",
+    "advanced_stock_management": "0",
+    "pack_stock_type": "3",
+    "state": "1",
+    "product_type": "standard",
+    "id_shop": "1",
+    "id_lang": "1",
+    "description": "<p>The adventure begins with a cup of coffee. Set out to conquer the day! 8,2cm diameter \/ 9,5cm height \/ 0.43kg. Dishwasher-proof.<\/p>",
+    "description_short": "<p>White Ceramic Mug. 325ml<\/p>",
+    "link_rewrite": "mug-the-adventure-begins",
+    "meta_description": "",
+    "meta_keywords": "",
+    "meta_title": "",
+    "name": "Mug The adventure begins",
+    "available_now": "",
+    "available_later": "",
+    "delivery_in_stock": "",
+    "delivery_out_stock": "",
+    "new": "1",
+    "id_product_attribute": 0,
+    "allow_oosp": 1,
+    "cover_image_id": "7",
+    "cart_quantity": "36",
+    "id_customization": null,
+    "manufacturer_name": "Studio Design",
+    "quantity_available": "-1",
+    "category": "home-accessories",
+    "unique_id": "0000000007000000000000",
+    "id_address_delivery": "0",
+    "customization_quantity": null,
+    "price_attribute": null,
+    "ecotax_attr": null,
+    "weight_attribute": null,
+    "id_image": "7-7",
+    "legend": "Mug The adventure begins",
+    "reduction_type": 0,
+    "is_gift": false,
+    "category_name": "Home Accessories",
+    "link": "http:\/\/localhost\/prestashop\/en\/home-accessories\/7-mug-the-adventure-begins.html",
+    "attribute_price": 0,
+    "price_tax_exc": 11.9,
+    "price_without_reduction": 14.28,
+    "price_without_reduction_without_tax": 11.9,
+    "reduction": 0,
+    "reduction_without_tax": 0,
+    "specific_prices": [],
+    "quantity_all_versions": -37,
+    "features": [
+      {
+        "name": "Composition",
+        "value": "Ceramic",
+        "id_feature": "1",
+        "position": "0"
+      }
+    ],
+    "virtual": 0,
+    "pack": false,
+    "packItems": [],
+    "nopackprice": 0,
+    "customization_required": false,
+    "rate": 20,
+    "tax_name": "TVA FR 20%",
+    "ecotax_rate": 0,
+    "unit_price_tax_excluded": 0,
+    "unit_price_tax_included": 0,
+    "images": [
+      {
+        "bySize": {
+          "small_default": {
+            "url": "http:\/\/localhost\/prestashop\/7-small_default\/mug-the-adventure-begins.jpg",
+            "width": 98,
+            "height": 98
+          },
+          "cart_default": {
+            "url": "http:\/\/localhost\/prestashop\/7-cart_default\/mug-the-adventure-begins.jpg",
+            "width": 125,
+            "height": 125
+          },
+          "home_default": {
+            "url": "http:\/\/localhost\/prestashop\/7-home_default\/mug-the-adventure-begins.jpg",
+            "width": 250,
+            "height": 250
+          },
+          "medium_default": {
+            "url": "http:\/\/localhost\/prestashop\/7-medium_default\/mug-the-adventure-begins.jpg",
+            "width": 452,
+            "height": 452
+          },
+          "large_default": {
+            "url": "http:\/\/localhost\/prestashop\/7-large_default\/mug-the-adventure-begins.jpg",
+            "width": 800,
+            "height": 800
+          }
+        },
+        "small": {
+          "url": "http:\/\/localhost\/prestashop\/7-small_default\/mug-the-adventure-begins.jpg",
+          "width": 98,
+          "height": 98
+        },
+        "medium": {
+          "url": "http:\/\/localhost\/prestashop\/7-home_default\/mug-the-adventure-begins.jpg",
+          "width": 250,
+          "height": 250
+        },
+        "large": {
+          "url": "http:\/\/localhost\/prestashop\/7-large_default\/mug-the-adventure-begins.jpg",
+          "width": 800,
+          "height": 800
+        },
+        "legend": "Mug The adventure begins",
+        "id_image": "7",
+        "cover": "1",
+        "position": "1",
+        "associatedVariants": []
+      }
+    ],
+    "default_image": {
+      "bySize": {
+        "small_default": {
+          "url": "http:\/\/localhost\/prestashop\/7-small_default\/mug-the-adventure-begins.jpg",
+          "width": 98,
+          "height": 98
+        },
+        "cart_default": {
+          "url": "http:\/\/localhost\/prestashop\/7-cart_default\/mug-the-adventure-begins.jpg",
+          "width": 125,
+          "height": 125
+        },
+        "home_default": {
+          "url": "http:\/\/localhost\/prestashop\/7-home_default\/mug-the-adventure-begins.jpg",
+          "width": 250,
+          "height": 250
+        },
+        "medium_default": {
+          "url": "http:\/\/localhost\/prestashop\/7-medium_default\/mug-the-adventure-begins.jpg",
+          "width": 452,
+          "height": 452
+        },
+        "large_default": {
+          "url": "http:\/\/localhost\/prestashop\/7-large_default\/mug-the-adventure-begins.jpg",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "small": {
+        "url": "http:\/\/localhost\/prestashop\/7-small_default\/mug-the-adventure-begins.jpg",
+        "width": 98,
+        "height": 98
+      },
+      "medium": {
+        "url": "http:\/\/localhost\/prestashop\/7-home_default\/mug-the-adventure-begins.jpg",
+        "width": 250,
+        "height": 250
+      },
+      "large": {
+        "url": "http:\/\/localhost\/prestashop\/7-large_default\/mug-the-adventure-begins.jpg",
+        "width": 800,
+        "height": 800
+      },
+      "legend": "Mug The adventure begins",
+      "id_image": "7",
+      "cover": "1",
+      "position": "1",
+      "associatedVariants": []
+    },
+    "cover": {
+      "bySize": {
+        "small_default": {
+          "url": "http:\/\/localhost\/prestashop\/7-small_default\/mug-the-adventure-begins.jpg",
+          "width": 98,
+          "height": 98
+        },
+        "cart_default": {
+          "url": "http:\/\/localhost\/prestashop\/7-cart_default\/mug-the-adventure-begins.jpg",
+          "width": 125,
+          "height": 125
+        },
+        "home_default": {
+          "url": "http:\/\/localhost\/prestashop\/7-home_default\/mug-the-adventure-begins.jpg",
+          "width": 250,
+          "height": 250
+        },
+        "medium_default": {
+          "url": "http:\/\/localhost\/prestashop\/7-medium_default\/mug-the-adventure-begins.jpg",
+          "width": 452,
+          "height": 452
+        },
+        "large_default": {
+          "url": "http:\/\/localhost\/prestashop\/7-large_default\/mug-the-adventure-begins.jpg",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "small": {
+        "url": "http:\/\/localhost\/prestashop\/7-small_default\/mug-the-adventure-begins.jpg",
+        "width": 98,
+        "height": 98
+      },
+      "medium": {
+        "url": "http:\/\/localhost\/prestashop\/7-home_default\/mug-the-adventure-begins.jpg",
+        "width": 250,
+        "height": 250
+      },
+      "large": {
+        "url": "http:\/\/localhost\/prestashop\/7-large_default\/mug-the-adventure-begins.jpg",
+        "width": 800,
+        "height": 800
+      },
+      "legend": "Mug The adventure begins",
+      "id_image": "7",
+      "cover": "1",
+      "position": "1",
+      "associatedVariants": []
+    },
+    "has_discount": false,
+    "discount_type": null,
+    "discount_percentage": null,
+    "discount_percentage_absolute": null,
+    "discount_amount": null,
+    "discount_amount_to_display": null,
+    "price_amount": 14.28,
+    "regular_price_amount": 14.28,
+    "regular_price": "\u20ac14.28",
+    "discount_to_display": null,
+    "unit_price_full": "\u20ac0.00 ",
+    "show_availability": true,
+    "availability_message": "",
+    "availability_date": null,
+    "availability": "available"
+  }

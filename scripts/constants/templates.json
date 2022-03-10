@@ -11,9 +11,13 @@
   },
   "product-miniature": {
     "path": "catalog/_partials/miniatures/product.tpl",
+    "content": {
+      "start": "<div class=\"row\">",
+      "end": "</div>"
+    },
     "datas": {
       "page": "pages/home.json",
-      "products": "products/single.json"
+      "product": "products/miniature.json"
     }
   }
 }

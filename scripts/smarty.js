@@ -6,6 +6,9 @@ const hooks = require('./constants/hooks.json');
 const shop = require('./datas/shop.json');
 const urls = require('./datas/urls.json');
 
+const dir = path.resolve(__dirname, '.');
+const templatesPath = path.resolve(__dirname, '../templates');
+
 function ensureDirectoryExistence(filePath) {
   var dirname = path.dirname(filePath);
   if (fs.existsSync(dirname)) {
@@ -29,14 +32,14 @@ function replaceHooks(html) {
     if(html.replace(name, '') !== html) {
       let datas = {urls, shop};
 
-      if(fs.existsSync(`./datas/hooks/${name}.json`)) {
-        datas = {...datas, ...require(`./datas/hooks/${name}.json`)}
+      if(fs.existsSync(`${dir}/datas/hooks/${name}.json`)) {
+        datas = {...datas, ...require(`${dir}/datas/hooks/${name}.json`)}
       }else {
         console.log(`No ./datas/hooks/${name}.json file found.`)
       }
 
       paths.forEach(path => {
-        const compiler = s.compile(`../${path}`); 
+        const compiler = s.compile(`${__dirname}/../${path}`); 
 
         let hookContent = compiler.render(datas);
 
@@ -67,17 +70,16 @@ s.addPlugin({
 
 
 Object.entries(templates).forEach(([name, template]) => {
-  s.setBasedir('../templates');
+  s.setBasedir(templatesPath);
   let datas = {shop, urls};
-  let file = fs.readFileSync(`../templates/${template.path}`, 'utf8')
+  let file = fs.readFileSync(`${templatesPath}/${template.path}`, 'utf8')
 
   file = file.replace(/nofilter/g, '');
-
   file = file.replace(`{include file='_partials/microdata/product-jsonld.tpl'}`, '')
   file = file.replace(`{include file='_partials/microdata/product-list-jsonld.tpl' listing=$listing}`, '')
 
   Object.entries(template.datas).forEach(([key, data]) => {
-    datas = {...datas, [key]: require(`./datas/${data}`)};
+    datas = {...datas, [key]: require(`${dir}/datas/${data}`)};
   })
 
   const compiler = s.compile(file); 
@@ -94,6 +96,6 @@ Object.entries(templates).forEach(([name, template]) => {
 
   html = replaceHooks(html);
 
-  ensureDirectoryExistence(`./build/${template.path}`, html);
-  fs.writeFileSync(`./build/${template.path}`.replace('tpl', 'html'), html)
+  ensureDirectoryExistence(`${dir}/build/${template.path}`, html);
+  fs.writeFileSync(`${dir}/build/${template.path}`.replace('tpl', 'html'), html)
 })

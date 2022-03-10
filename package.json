@@ -15,6 +15,7 @@
     "scss-fix": "stylelint \"**/*.scss\" --fix",
     "lint": "eslint -c .eslintrc.js --ext .js,.ts ./src/js",
     "test": "jest",
+    "smarty": "node ./scripts/smarty.js",
     "coverage": "jest --collect-coverage",
     "lint-fix": "eslint -c .eslintrc.js --ext .js,.ts ./src/js --fix",
     "storybook": "start-storybook -p 6006",
