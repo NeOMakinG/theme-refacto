@@ -24,7 +24,7 @@
  *}
 
 <div id="_desktop_search" class="order-2 ms-auto">
-  <div id="search_widget" class="search-widgets float-start js-search-widget" data-search-controller-url="{$search_controller_url}">
+  <div id="search_widget" class="search-widgets js-search-widget" data-search-controller-url="{$search_controller_url}">
     <form method="get" action="{$search_controller_url}">
       <input type="hidden" name="controller" value="search">
       <i class="material-icons search" aria-hidden="true">search</i>
