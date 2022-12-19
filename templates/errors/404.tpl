@@ -23,7 +23,7 @@
       s='If this is a recurring problem, please [1]contact us[/1]'
       d='Shop.Theme.Catalog'
       sprintf=[
-        '[1]' => "<a href='{$urls.pages.contact}' class='alert-link'>",
+        '[1]' => '<a href="'|cat:$urls.pages.contact|cat:'" class="alert-link">',
         '[/1]' => "</a>"
       ]
     }
